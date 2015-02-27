@@ -168,8 +168,8 @@ function PlayerHandler() {
                 this._damage = parent.damage();
             }
             this.update = function(dt) {
-                pos.x += (_speed * _direction.x);
-                pos.y += (_speed * _direction.y);
+                pos.x += (_speed * _direction.x) * dt;
+                pos.y += (_speed * _direction.y) * dt;
             }
         }
         /***********************************/
