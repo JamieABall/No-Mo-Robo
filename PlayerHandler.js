@@ -148,9 +148,28 @@ function PlayerHandler() {
             var _damage;
             var _sprite;
             
-            
-            this.update = function(dt) {
+            function initSprite(pos)
+            {
+                var ret = new Sprite();
                 
+                ret.image = Textures.load(PROJECTILE_SPRITE_SRC);
+                ret.width = PROJ_SPRITE_WIDTH;
+                ret.height = PROJ_SPRITE_HEIGHT;
+                ret.x = pos.x;
+                ret.y = pos.y;
+                ret.offsetX = -ret.width / 2;
+                ret.offsetY = -ret.height / 2;
+                world.addChild(ret);
+                return ret;
+            }
+            
+            this.getParentDamage()
+            {
+                this._damage = parent.damage();
+            }
+            this.update = function(dt) {
+                pos.x += (_speed * _direction.x);
+                pos.y += (_speed * _direction.y);
             }
         }
         /***********************************/
