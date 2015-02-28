@@ -147,7 +147,7 @@ function PlayerHandler() {
             var _direction;
             var _damage;
             var _sprite;
-            
+            var _collision;
             function initSprite(pos)
             {
                 var ret = new Sprite();
@@ -166,6 +166,11 @@ function PlayerHandler() {
             this.getParentDamage()
             {
                 this._damage = parent.damage();
+            }
+            
+            this.hasCollided = function()
+            {
+                return collided;
             }
             this.update = function(dt) {
                 pos.x += (_speed * _direction.x) * dt;
