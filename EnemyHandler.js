@@ -7,7 +7,8 @@ function EnemyHandler() {
         Enemy
     ************************************/
     function Enemy(id, pos) {
-        var _id= id;
+        var _id = id;
+        var _pos = pos;
         var _sprite = initSprite(pos);
         var _condition = ENEMY_CONDITION;
         var _speed = ENEMY_SPEED;
@@ -17,6 +18,7 @@ function EnemyHandler() {
         function initSprite(pos) {
             var ret = new Sprite();
             ret.image = Textures.load(ENEMY_SPRITE_SRC);
+            ret.index = 5;
             ret.width = ENEMY_SPRITE_WIDTH;
             ret.height = ENEMY_SPRITE_HEIGHT;
             ret.x = pos.x;
@@ -28,13 +30,15 @@ function EnemyHandler() {
         }
         
         this.id = function() { return _id; }
-        //this.sprite = function() { return _sprite; }
+        this.sprite = function() { return _sprite; }
         this.condition = function() { return _condition; }
         this.modifyCondition = function(delta) { _condition += delta; }
         this.damage = function() { return _damage; }
         
         this.update = function(dt) {
-            
+            if(_sprite.x > 115) {
+                _sprite.x -= _speed * dt;
+            }
         }
         
         this.despawn = function() {
@@ -59,12 +63,27 @@ function EnemyHandler() {
         }
         
         function position() {
-            return SPAWN_POSITION;
+            var spawnPos = { x: 0, y: 0 };
+            var lane = Math.ceil(Math.random() * 5);
+            
+            spawnPos.x = CANVAS_WIDTH;
+            spawnPos.y = CANVAS_HEIGHT / 2 + lane * LANE_HEIGHT - 5;
+            
+            return spawnPos;
         }
-                
+        
         this.spawn = function() {
             return new Enemy(id(), position());
         }
+    }
+    /***********************************/
+    
+    
+    /************************************
+        Controller
+    ************************************/
+    function Controller() {
+    
     }
     /***********************************/
     
