@@ -21,7 +21,7 @@ function initSprite(pos)
     
     ret.image = Textures.load(ROBOT_SPRITE_SRC);
     ret.width = ROBOT_SPRITE_WIDTH;
-    ret.height = ENEMY_SPRITE_HEIGHT;
+    ret.height = ROBOT_SPRITE_HEIGHT;
     ret.x = pos.x;
     ret.y = pos.y;
     ret.offsetX = -ret.width / 2;
