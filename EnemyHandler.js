@@ -9,6 +9,7 @@ function EnemyHandler() {
     function Enemy(id, pos) {
         var _id = id;
         var _pos = pos;
+        // makeByType(?);
         var _sprite = initSprite(pos);
         var _condition = ENEMY_CONDITION;
         var _speed = ENEMY_SPEED;
@@ -34,6 +35,29 @@ function EnemyHandler() {
         this.condition = function() { return _condition; }
         this.modifyCondition = function(delta) { _condition += delta; }
         this.damage = function() { return _damage; }
+        
+        function makeByType(type)
+        {
+            switch(type)
+            {
+                case 1:
+                    _sprite.image = Textures.load(ROBOT_SPRITE_SRC);
+                    break;
+                case 2:
+                    _sprite.image = Textures.load(HEAVYBOT_SPRITE_SRC);
+                    _speed = ENEMY_SPEED * 0.5;
+                    _condition = ENEMY_CONDITON + 30;
+                    _damage = ENEMY_DAMAGE * 2;
+                    break;
+                case 3:
+                    _sprite.image = Textures.load(SPEEDBOT_SPRITE_SRC);
+                    _speed = ENEMY_SPEED + 0.5;
+                    _damage = ENEMY_DAMAGE * 0.5;
+                    break;
+               default:
+                   return;
+            }
+        }
         
         this.update = function(dt) {
             if(_sprite.x > 115) {
