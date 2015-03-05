@@ -8,17 +8,17 @@
    @last editor
 */
 var ROBOT_SPRITE_SRC;
-var robotZ;
+var robotZ = 4;
 var robotWidth;
 var robotHeight;
 
 var HEAVY_BOT_SPRITE_SRC;
-var heavyZ;
+var heavyZ = 4;
 var heavyWidth;
 var heavyHeight;
 
 var SPEED_BOT_SRC;
-var speedZ;
+var speedZ = 4;
 var speedWidth;
 var speedHeight;
 
