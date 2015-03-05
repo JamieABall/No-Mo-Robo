@@ -12,7 +12,10 @@ function Robot(id, pos)
     var _condition = ENEMY_CONDITION;
     var _speed = ROBOT_SPEED;
     var _damage = ROBOT_DAMAGE;
-    var _state;
+    var _state; 
+    Enemy.call(this, id, pos);
+
+  
 
 
 function initSprite(pos)
