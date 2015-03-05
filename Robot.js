@@ -13,7 +13,7 @@ function Robot(id, pos)
     var _speed = ROBOT_SPEED;
     var _damage = ROBOT_DAMAGE;
     var _state; 
-    ZParenizor.inherits(Parenizor);
+   Enemy.call(this, id, pos);
 
   
 
