@@ -5,7 +5,7 @@
   @last editor
   
 */
-function Robot(id, pos)
+function Robot(id, pos) 
 {
     var _id= id;
     var _sprite = initSprite(x, y);
