@@ -14,7 +14,7 @@ function Robot(id, pos)
     var _damage = ROBOT_DAMAGE;
     var _state; 
    Enemy.call(this, id, pos);
-
+    uber;
   
 
 
