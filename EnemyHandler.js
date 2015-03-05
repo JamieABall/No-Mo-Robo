@@ -36,7 +36,7 @@ function EnemyHandler() {
         this.modifyCondition = function(delta) { _condition += delta; }
         this.damage = function() { return _damage; }
         
-        function makeByType(type)
+      /*  function makeByType(type)
         {
             switch(type)
             {
@@ -57,7 +57,20 @@ function EnemyHandler() {
                default:
                    return;
             }
-        }
+        } */
+        
+       /* function makeByType(type)
+        {
+            if(type instanceof Robot)
+            {
+                initSprite(ROBOT_SPRITE_SRC);
+            }
+            
+            if(type instanceof HeavyBot)
+            {
+                initSprite(HEAVYBOT_SPRITE_SRC);
+            }
+        }*/
         
         this.update = function(dt) {
             if(_sprite.x > 115) {
