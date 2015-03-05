@@ -6,6 +6,8 @@
    @date 3/5/15
    @last update 3/5/15
    @last editor
+   
+   Note having multiple z indicies for different enemy types seems a little pointless.
 */
 var ROBOT_SPRITE_SRC;
 var robotZ = 4;
