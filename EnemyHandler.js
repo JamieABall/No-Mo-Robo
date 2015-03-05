@@ -2,7 +2,11 @@
     Enemy Handler
 ************************************/
 function EnemyHandler() {
-    
+
+var Robot = {spriteSource: ROBOT_SPRITE_SRC, zIndex: robotZ, spriteWidth: robotWidth, spriteHight: robotHeight};
+var HeavyBot = (spriteSource: HEAVY_BOT_SRC, zIndex: heavyZ, spriteWidth: heavyWidth, spriteHeight: heavyHeight};
+var SpeedBot = {spriteSource: SPEED_BOT_SRC, zIndex: speedZ, spriteWidth: speedWidth, spriteHeight: speedHeight};
+
     /************************************
         Enemy
     ************************************/
