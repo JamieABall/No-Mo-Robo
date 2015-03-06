@@ -93,23 +93,26 @@ function CollsionHandler()
          
           for(plist.moveTo(0); plist.getIndex() >= 0; plist.moveNext())
           {
-             if(checkCollision(plist.getElement(), elist.getElement()))
+             if(checkCollision(plist.getElement().sprite(), elist.getElement().sprite()))
              {
                             damageStep(plist.getElement(), elist.getElement());
              }
           }
           
-          if(checkCollison(elist.getElement(), house);
+          if(checkCollision(elist.getElement().sprite(), house.sprite())) {
+              damageStep(elist.getElement(), house);
+              damageStep(house, elist.getElement());
+          }
           
-        /*  for(tlist.moveTo(0); tlist.getIndex() >= 0; tlist.moveNext())
+         for(tlist.moveTo(0); tlist.getIndex() >= 0; tlist.moveNext())
           {
-             if(checkCollision(plist.getElement(), elist.getElement()))
+             if(checkCollision(elist.getElement().sprite(), tlist.getElement().sprite()))
              {
-                            damageStep(elist.getElement(), elist.getElement());
+               damageStep(elist.getElement(), tlist.getElement());
              }
-          } */
+          } 
        }
-    }
+    };
 }
 
 
